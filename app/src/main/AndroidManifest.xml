@@ -31,6 +31,8 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.RefreshActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activity.CollpasedActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

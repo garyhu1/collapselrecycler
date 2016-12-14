@@ -24,5 +24,17 @@
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:text="下个界面"/>
+    <Button
+        android:id="@+id/refresh_btn"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Ptr测试界面"/>
+    <Button
+        android:id="@+id/coll_btn"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Collapse测试界面"/>
 
 </LinearLayout>

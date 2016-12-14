@@ -16,8 +16,9 @@ import com.garyhu.citypickerdemo.R;
 
 public class SecondActivity extends AppCompatActivity{
 
-    private Button btn;
+    private Button ptrBtn;
     private Button nextBtn;
+    private Button collBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class SecondActivity extends AppCompatActivity{
         setContentView(R.layout.activity_second);
 //        btn = ((Button) findViewById(R.id.btn));
         nextBtn = ((Button) findViewById(R.id.next_btn));
+        ptrBtn = ((Button) findViewById(R.id.refresh_btn));
+        collBtn = ((Button) findViewById(R.id.coll_btn));
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -43,6 +46,21 @@ public class SecondActivity extends AppCompatActivity{
             }
         });
 
+        collBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,CollpasedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ptrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,RefreshActivity.class);
+                startActivity(intent);
+            }
+        });
         findViewById(R.id.btn_pick_city).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
