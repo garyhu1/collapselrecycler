@@ -1,12 +1,12 @@
 # collapselrecycler
 仿通讯录的recyclerView+可折叠的图片浏览，仿饿了么
 
-(一)、使用要点
-A概述
-1.添加依赖compile 'com.android.support:design:23.1.1'
-1.CollaspingToolbarLayout必须放在CoordinatorLayout中才能生效
-2.CoordinatorLayout中整体上分为两部分，第一部分为AppBarLayout，AppBarLayout中包裹一个CollapsingToolbarLayout，CollapsingToolbarLayout中有两个控件，一个是头部显示的ImageView，另一个是Toolbar；第二部分为RecyclerView或者NestedScrollView。
-B CollapsingToolbarLayout属性详解
+# (一)、使用要点
+# A概述
+# 1.添加依赖compile 'com.android.support:design:23.1.1'
+# 1.CollaspingToolbarLayout必须放在CoordinatorLayout中才能生效
+# 2.CoordinatorLayout中整体上分为两部分，第一部分为AppBarLayout，AppBarLayout中包裹一个CollapsingToolbarLayout，CollapsingToolbarLayout中有两个控件，一个是头部显示的ImageView，另一个是Toolbar；第二部分为RecyclerView或者NestedScrollView。
+# B CollapsingToolbarLayout属性详解
 1. app:layout_scrollFlags="" 该属性表示CollapsingToolbarLayout的滚动标签，共有5个取值：
 i.   scroll 表示CollapsingToolbarLayout可以滚动
 ii.  enterAlways 表示底部的ScrollView只要向下滚动，头部就显示出来
