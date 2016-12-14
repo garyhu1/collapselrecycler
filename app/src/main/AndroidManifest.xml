@@ -29,6 +29,8 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.HomeActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activity.RefreshActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

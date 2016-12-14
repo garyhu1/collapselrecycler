@@ -49,4 +49,8 @@ captures/
 
 # Keystore files
 *.jks
+<<<<<<< Updated upstream
 >>>>>>> origin/master
+=======
+>>>>>>> d3e5f3a2342df7b0e1e8151aba5ca25c2fa1661d
+>>>>>>> Stashed changes
