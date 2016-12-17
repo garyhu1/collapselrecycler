@@ -19,6 +19,7 @@ public class SecondActivity extends AppCompatActivity{
     private Button ptrBtn;
     private Button nextBtn;
     private Button collBtn;
+    private Button galleryBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class SecondActivity extends AppCompatActivity{
         nextBtn = ((Button) findViewById(R.id.next_btn));
         ptrBtn = ((Button) findViewById(R.id.refresh_btn));
         collBtn = ((Button) findViewById(R.id.coll_btn));
+        galleryBtn = ((Button) findViewById(R.id.gallery));
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -47,6 +49,13 @@ public class SecondActivity extends AppCompatActivity{
         });
 
         collBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,CollpasedActivity.class);
+                startActivity(intent);
+            }
+        });
+        galleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SecondActivity.this,CollpasedActivity.class);
