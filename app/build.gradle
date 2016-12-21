@@ -29,10 +29,13 @@ dependencies {
     compile 'me.leefeng:citypicker:1.0'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.bigkoo:convenientbanner:2.0.5'
+    //动画库
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.facebook.fresco:fresco:0.12.0'
     compile 'com.facebook.fresco:animated-gif:0.12.0'
+    //facebook的弹簧动画库
+    compile 'com.facebook.rebound:rebound:0.3.8'
     compile 'com.android.support:design:24.2.1'
     compile project(path: ':indexablerecyclerview')
     compile 'in.srain.cube:ultra-ptr:1.0.11'

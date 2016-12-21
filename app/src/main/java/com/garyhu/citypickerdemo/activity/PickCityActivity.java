@@ -35,7 +35,7 @@ public class PickCityActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_city);
-        getSupportActionBar().setTitle("选择城市");
+//        getSupportActionBar().setTitle("选择城市");
 
         mSearchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.search_fragment);
         IndexableLayout indexableLayout = (IndexableLayout) findViewById(R.id.indexableLayout);

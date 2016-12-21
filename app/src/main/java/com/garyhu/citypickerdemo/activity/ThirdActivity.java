@@ -23,6 +23,7 @@ import java.util.ArrayList;
 /**
  * 作者： garyhu.
  * 时间： 2016/12/8.
+ * 仿饿了么的图片变为详情页
  */
 
 public class ThirdActivity extends AppCompatActivity {

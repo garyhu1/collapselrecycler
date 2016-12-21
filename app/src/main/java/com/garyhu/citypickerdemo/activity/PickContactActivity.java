@@ -39,7 +39,7 @@ public class PickContactActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_contact);
-        getSupportActionBar().setTitle("联系人");
+//        getSupportActionBar().setTitle("联系人");
         IndexableLayout indexableLayout = (IndexableLayout) findViewById(R.id.indexableLayout);
 
         // setAdapter

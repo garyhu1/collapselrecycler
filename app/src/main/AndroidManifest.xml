@@ -33,8 +33,6 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.CollpasedActivity"
             android:launchMode="singleTop"/>
-        <activity android:name=".activity.GalleryActivity"
-            android:launchMode="singleTop"/>
     </application>
 
 </manifest>
