@@ -37,6 +37,8 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.FaceBookAnimActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activity.FlycoActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

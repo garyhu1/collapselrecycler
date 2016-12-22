@@ -21,6 +21,7 @@ public class SecondActivity extends AppCompatActivity{
     private Button collBtn;
     private Button galleryBtn;
     private Button faceBtn;
+    private Button flycoBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class SecondActivity extends AppCompatActivity{
         collBtn = ((Button) findViewById(R.id.coll_btn));
         galleryBtn = ((Button) findViewById(R.id.gallery));
         faceBtn = ((Button) findViewById(R.id.face));
+        flycoBtn = ((Button) findViewById(R.id.next_activity));
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -77,6 +79,13 @@ public class SecondActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SecondActivity.this,RefreshActivity.class);
+                startActivity(intent);
+            }
+        });
+        flycoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,FlycoActivity.class);
                 startActivity(intent);
             }
         });

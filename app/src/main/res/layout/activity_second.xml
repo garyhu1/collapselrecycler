@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="下个界面"/>
+        android:text="Image的交互"/>
     <Button
         android:id="@+id/refresh_btn"
         android:layout_width="match_parent"
@@ -48,5 +48,12 @@
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:text="Facebook测试界面"/>
+
+    <Button
+        android:id="@+id/next_activity"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="另个主界面"/>
 
 </LinearLayout>
