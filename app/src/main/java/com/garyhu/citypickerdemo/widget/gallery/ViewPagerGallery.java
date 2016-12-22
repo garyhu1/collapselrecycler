@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.garyhu.citypickerdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class ViewPagerGallery extends ViewPager {
         super(context, attrs);
         mContext = context;
         TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.viewpagergallery);
-        isShadow = typedArray.getBoolean(R.styleable.viewpagergallery_isShadow, true);
+        isShadow = typedArray.getBoolean(R.styleable.viewpagergallery_is_Shadow, true);
         typedArray.recycle();
     }
 

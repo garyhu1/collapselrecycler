@@ -21,7 +21,7 @@ public class ViewPagerGalleryAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return mViews.size();
+        return mViews!=null?mViews.size():0;
     }
 
     @Override
