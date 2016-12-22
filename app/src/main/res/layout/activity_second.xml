@@ -31,10 +31,22 @@
         android:layout_height="wrap_content"
         android:text="Ptr测试界面"/>
     <Button
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Gallery测试界面"/>
+    <Button
         android:id="@+id/coll_btn"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:text="Collapse测试界面"/>
+    <Button
+        android:id="@+id/face"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Facebook测试界面"/>
 
 </LinearLayout>

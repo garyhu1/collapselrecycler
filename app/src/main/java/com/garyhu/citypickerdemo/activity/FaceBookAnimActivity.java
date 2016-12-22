@@ -84,7 +84,7 @@ public class FaceBookAnimActivity extends AppCompatActivity {
             springs.get(i).setCurrentValue(400);
         }
 
-        springChain.setControlSpringIndex(2).getControlSpring().setEndValue(0);
+        springChain.setControlSpringIndex(4).getControlSpring().setEndValue(0);
 
     }
 

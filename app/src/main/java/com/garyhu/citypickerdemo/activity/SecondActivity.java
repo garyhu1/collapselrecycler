@@ -20,6 +20,7 @@ public class SecondActivity extends AppCompatActivity{
     private Button nextBtn;
     private Button collBtn;
     private Button galleryBtn;
+    private Button faceBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class SecondActivity extends AppCompatActivity{
         ptrBtn = ((Button) findViewById(R.id.refresh_btn));
         collBtn = ((Button) findViewById(R.id.coll_btn));
         galleryBtn = ((Button) findViewById(R.id.gallery));
+        faceBtn = ((Button) findViewById(R.id.face));
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -58,7 +60,15 @@ public class SecondActivity extends AppCompatActivity{
         galleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this,CollpasedActivity.class);
+                Intent intent = new Intent(SecondActivity.this,GalleryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        faceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,FaceBookAnimActivity.class);
                 startActivity(intent);
             }
         });
