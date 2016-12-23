@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/collapselrecycler.iml" filepath="$PROJECT_DIR$/collapselrecycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/indexablerecyclerview/indexablerecyclerview.iml" filepath="$PROJECT_DIR$/indexablerecyclerview/indexablerecyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" filepath="$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" />
     </modules>
   </component>
 </project>
