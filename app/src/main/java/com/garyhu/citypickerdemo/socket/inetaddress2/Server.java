@@ -18,7 +18,7 @@ public class Server {
 			ServerSocket ss = new ServerSocket(9100);
 			System.out.println("����������");
 			while(true){
-				Socket s = ss.accept();
+				final Socket s = ss.accept();
 				Thread t1 = new Thread(){
 					public void run(){
 						try {

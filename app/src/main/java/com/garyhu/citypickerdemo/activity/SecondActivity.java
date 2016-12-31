@@ -22,6 +22,7 @@ public class SecondActivity extends AppCompatActivity{
     private Button galleryBtn;
     private Button faceBtn;
     private Button flycoBtn;
+    private Button statusBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class SecondActivity extends AppCompatActivity{
         galleryBtn = ((Button) findViewById(R.id.gallery));
         faceBtn = ((Button) findViewById(R.id.face));
         flycoBtn = ((Button) findViewById(R.id.next_activity));
+        statusBtn = ((Button) findViewById(R.id.status_activity));
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -89,6 +91,14 @@ public class SecondActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
+        statusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this,StatusActivity.class));
+            }
+        });
+
         findViewById(R.id.btn_pick_city).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

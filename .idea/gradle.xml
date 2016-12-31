@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/indexablerecyclerview" />
             <option value="$PROJECT_DIR$/rxretrofitlibrary" />
+            <option value="$PROJECT_DIR$/sweetdialog" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

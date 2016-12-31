@@ -13,4 +13,14 @@ public class ForthFragment extends BaseFragment {
     public int getLayoutRes() {
         return R.layout.fragment_forth;
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
 }

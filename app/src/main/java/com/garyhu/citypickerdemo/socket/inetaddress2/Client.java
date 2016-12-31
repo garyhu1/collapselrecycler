@@ -17,7 +17,7 @@ public class Client {
 	public static void main(String[] args) {
 		try {
 			InetAddress address = InetAddress.getLocalHost();
-			Socket s = new Socket(address,9100);
+			final Socket s = new Socket(address,9100);
 			Thread t1 = new Thread(){
 				public void run(){
 					try {

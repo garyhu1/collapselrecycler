@@ -29,6 +29,8 @@ public abstract class BaseFragment extends SupportFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutRes(),null);
         unbinder = ButterKnife.bind(this,view);
+        initData();
+        setListener();
         return view;
     }
 
@@ -38,6 +40,10 @@ public abstract class BaseFragment extends SupportFragment {
     }
 
     public abstract int getLayoutRes();
+
+    protected abstract void initData();
+
+    protected abstract void setListener();
 
     @Override
     public void onDestroy() {

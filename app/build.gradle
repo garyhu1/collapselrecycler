@@ -48,4 +48,5 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     //基类
     compile 'me.yokeyword:fragmentation:0.8.5'
+    compile project(path: ':sweetdialog')
 }

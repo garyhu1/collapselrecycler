@@ -1,1 +1,1 @@
-include ':app', ':indexablerecyclerview', ':rxretrofitlibrary'
+include ':app', ':indexablerecyclerview', ':rxretrofitlibrary', ':sweetdialog'

@@ -13,4 +13,14 @@ public class SecondFragment extends BaseFragment {
     public int getLayoutRes() {
         return R.layout.fragment_second;
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
 }
