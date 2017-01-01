@@ -10,7 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="点击弹出对话框"
+        android:background="@color/tool_bar"
+        android:textColor="@color/bg_context"
         android:gravity="center"
         android:textSize="20sp"/>
+    <com.garyhu.citypickerdemo.widget.myrecyclerview.MyRecyclerView
+        android:layout_below="@id/dialog"
+        android:id="@+id/my_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
