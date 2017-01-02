@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -20,7 +21,9 @@ import android.widget.TextView;
 import com.garyhu.citypickerdemo.R;
 
 /**
- * Created by Administrator on 2016/12/31.
+ * Created by garyhu
+ * on 2016/12/31.
+ * 侧滑点击删除
  */
 
 public class MyRecyclerView extends RecyclerView {
@@ -33,8 +36,9 @@ public class MyRecyclerView extends RecyclerView {
     private int xDown, xMove, yDown, yMove, mTouchSlop, xUp, yUp;
     private Scroller mScroller;
     private TextView textView;
-    private ImageView imageView;
+//    private ImageView imageView;
     private boolean isFirst = true;
+    private int num = -1;
     private onGetListener listener;
 
     public interface onGetListener {
@@ -59,7 +63,7 @@ public class MyRecyclerView extends RecyclerView {
         //滑动到最小距离
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         //滑动的最大距离
-        maxLength = ((int) (180 * context.getResources().getDisplayMetrics().density + 0.5f));
+        maxLength = ((int) (90 * context.getResources().getDisplayMetrics().density ));
         //初始化Scroller
         mScroller = new Scroller(context, new LinearInterpolator(context, null));
     }
@@ -101,7 +105,16 @@ public class MyRecyclerView extends RecyclerView {
                 MyViewHolder viewHolder = (MyViewHolder) getChildViewHolder(view);
                 itemLayout = viewHolder.layout;
                 textView = (TextView) itemLayout.findViewById(R.id.item_delete_txt);
-                imageView = (ImageView) itemLayout.findViewById(R.id.item_delete_img);
+//                imageView = (ImageView) itemLayout.findViewById(R.id.item_delete_img);
+                Log.d("ddd","num ------>"+num);
+                for (int i = 0; i < count; i++) {
+                    if(num !=pos-mFirstPosition){
+                        View view1 = getChildAt(i);
+                        MyViewHolder viewHolder1 = (MyViewHolder) getChildViewHolder(view1);
+                        viewHolder1.layout.scrollTo(0,0);
+                    }
+                }
+                num = pos-mFirstPosition;
             }
             break;
 
@@ -120,24 +133,24 @@ public class MyRecyclerView extends RecyclerView {
                         newScrollX = 0;
                     }
                     if (scrollX > maxLength / 2) {
-                        textView.setVisibility(GONE);
-                        imageView.setVisibility(VISIBLE);
+//                        textView.setVisibility(GONE);
+//                        imageView.setVisibility(VISIBLE);
 
 
-                        if (isFirst) {
-                            ObjectAnimator animatorX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f, 1f);
-                            ObjectAnimator animatorY = ObjectAnimator.ofFloat(imageView, "scaleY", 1f, 1.2f, 1f);
-                            AnimatorSet animSet = new AnimatorSet();
-                            animSet.play(animatorX).with(animatorY);
-                            animSet.setDuration(800);
-                            animSet.start();
-                            isFirst = false;
-                        }
+//                        if (isFirst) {
+//                            ObjectAnimator animatorX = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 1.2f, 1f);
+//                            ObjectAnimator animatorY = ObjectAnimator.ofFloat(imageView, "scaleY", 1f, 1.2f, 1f);
+//                            AnimatorSet animSet = new AnimatorSet();
+//                            animSet.play(animatorX).with(animatorY);
+//                            animSet.setDuration(800);
+//                            animSet.start();
+//                            isFirst = false;
+//                        }
 
 
                     } else {
-                        textView.setVisibility(VISIBLE);
-                        imageView.setVisibility(GONE);
+//                        textView.setVisibility(VISIBLE);
+//                        imageView.setVisibility(GONE);
                     }
                     itemLayout.scrollBy(newScrollX, 0);
 
@@ -146,23 +159,23 @@ public class MyRecyclerView extends RecyclerView {
             break;
             case MotionEvent.ACTION_UP: {
 
-
                 xUp = x;
                 yUp = y;
                 int dx = xUp - xDown;
                 int dy = yUp - yDown;
                 if (Math.abs(dy) < mTouchSlop && Math.abs(dx) < mTouchSlop) {
                     listener.getPosition(pos);
-
                 } else {
                     int scrollX = itemLayout.getScrollX();
                     if (scrollX > maxLength / 2) {
-                        ((RecyclerAdapter) getAdapter()).removeRecycle(pos);
+//                        ((RecyclerAdapter) getAdapter()).removeRecycle(pos);
+                        itemLayout.scrollTo(dipToPx(getContext(),90), 0);
                     } else {
-                        mScroller.startScroll(scrollX, 0, -scrollX, 0);
+//                        mScroller.startScroll(scrollX, 0, -scrollX, 0);
+                        itemLayout.scrollTo(0, 0);
                         invalidate();
                     }
-                    isFirst = true;
+//                    isFirst = true;
                 }
             }
 

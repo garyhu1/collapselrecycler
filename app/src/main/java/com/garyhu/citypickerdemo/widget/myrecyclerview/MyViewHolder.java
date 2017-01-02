@@ -15,12 +15,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
     public TextView txt;
-    public ImageView img;
+//    public ImageView img;
     public LinearLayout layout;
     public MyViewHolder(View itemView) {
         super(itemView);
         txt= (TextView) itemView.findViewById(R.id.item_recycler_txt);
-        img= (ImageView) itemView.findViewById(R.id.item_delete_img);
+//        img= (ImageView) itemView.findViewById(R.id.item_delete_img);
         layout= (LinearLayout) itemView.findViewById(R.id.item_recycler_ll);
     }
 }
