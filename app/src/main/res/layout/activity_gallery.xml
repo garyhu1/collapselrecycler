@@ -12,8 +12,16 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"/>-->
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:text="沉浸式"/>
     <com.garyhu.citypickerdemo.widget.CircleImageView
         android:id="@+id/sdv"
+        android:layout_below="@id/tv"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"

@@ -29,7 +29,7 @@ public class Client {
 							s1 = new String(buf,0,len);
 							System.out.println(s1);
 						}
-						System.out.println(Thread.currentThread().getName()+"������");
+						System.out.println(Thread.currentThread().getName()+"������什么");
 					} catch (IOException e) {
 //						e.printStackTrace();
 						System.out.println(Thread.currentThread().getName()+"������");
