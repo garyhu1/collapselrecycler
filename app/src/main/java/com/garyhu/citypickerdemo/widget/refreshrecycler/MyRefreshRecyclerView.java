@@ -6,6 +6,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
@@ -89,6 +90,7 @@ public class MyRefreshRecyclerView extends SwipeMenuRecyclerView {
             else {
                 startLoadMore();//自动加载
             }
+            Toast.makeText(context, "已经滑到底部", Toast.LENGTH_SHORT).show();
         }
     }
 
