@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.garyhu.citypickerdemo.widget.refreshrecycler.MyRefreshRecyclerView
+        android:id="@+id/swipe_recycler"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="第四个界面"
-        android:gravity="center"
-        android:textSize="20sp"/>
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>
