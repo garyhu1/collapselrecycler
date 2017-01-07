@@ -57,9 +57,10 @@ android {
         }
     }
 
-    lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
-        abortOnError false
-    }
+//    lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
+//        abortOnError false
+//    }
+    //被注释了
 //    compileOptions {//可以进行 Java 的版本配置，以便使用对应版本的一些新特性,让IDE使用JAVA8语法解析
 //        sourceCompatibility JavaVersion.VERSION_1_8
 //        targetCompatibility JavaVersion.VERSION_1_8
@@ -101,6 +102,8 @@ dependencies {
     compile project(path: ':sweetdialog')
     //侧滑删除和上拉加载下拉刷新的RecyclerView
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
+    //手势放大图片
+    compile 'com.commit451:PhotoView:1.2.4'
 }
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))

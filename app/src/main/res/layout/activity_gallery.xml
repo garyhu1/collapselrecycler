@@ -30,8 +30,18 @@
     <com.garyhu.citypickerdemo.widget.gallery.ViewPagerGallery
         android:id="@+id/gallery"
         android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/sdv"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:is_Shadow="false"
         android:layout_height="400dp"/>
+    <TextView
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="15dp"
+        android:text="photoView"/>
 </RelativeLayout>

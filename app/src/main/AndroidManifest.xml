@@ -41,6 +41,8 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.StatusActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activity.PhotoViewActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

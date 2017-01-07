@@ -1,5 +1,6 @@
 package com.garyhu.citypickerdemo.activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,6 +38,9 @@ public class GalleryActivity extends AppCompatActivity {
     private String url = "http://uploadfile.bizhizu.cn/2015/0731/20150731051718540.jpg";
     private SimpleDraweeView sdv;
     private CircleImageView img;
+    private BossZoomHelper helper;
+
+    private boolean isShow = false;//图片是否点击放大了
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -98,7 +102,9 @@ public class GalleryActivity extends AppCompatActivity {
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new BossZoomHelper(GalleryActivity.this,img,400);
+                helper = new BossZoomHelper(GalleryActivity.this,img,400);
+                helper.showAnim();
+                isShow = true;
             }
         });
     }
@@ -130,5 +136,19 @@ public class GalleryActivity extends AppCompatActivity {
         list.add("http://imgsrc.baidu.com/forum/pic/item/a628c051f3deb48ffb5dc602f01f3a292cf5780c.jpg");
         list.add("http://easyread.ph.126.net/FdXx6SX4uct_FBTnq6s1Iw==/7916658542337077456.jpg");
         gallery.setImgUrls(list);
+    }
+
+    public void onClick(View view) {
+        startActivity(new Intent(this,PhotoViewActivity.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(isShow){
+            helper.hintAnim();
+            isShow = false;
+        }else {
+            super.onBackPressed();
+        }
     }
 }
