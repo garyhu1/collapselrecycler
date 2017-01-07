@@ -35,7 +35,7 @@ public class GalleryActivity extends AppCompatActivity {
 
     private ViewPagerGallery gallery;
     private RelativeLayout activitymain;
-    private String url = "http://uploadfile.bizhizu.cn/2015/0731/20150731051718540.jpg";
+    private String url = "http://f.hiphotos.baidu.com/image/pic/item/b151f8198618367a9f738e022a738bd4b21ce573.jpg";
     private SimpleDraweeView sdv;
     private CircleImageView img;
     private BossZoomHelper helper;
