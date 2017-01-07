@@ -1,0 +1,14 @@
+//可以自定义
+ext {
+    android = [
+            compileSdkVersion : 24,
+            buildToolsVersion :"24.0.3",
+            minSdkVersion     :15,
+            targetSdkVersion  :24,
+    ]
+
+    dependencies = [
+            appcompatV7 : 'com.android.support:appcompat-v7:24.2.1',
+            design      : 'com.android.support:design:24.2.1'
+    ]
+}

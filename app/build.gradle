@@ -2,22 +2,68 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
         applicationId "com.garyhu.citypickerdemo"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String','API_SERVER_URL','"http://api.miaodj.cn"'
+    }
+    signingConfigs {//签名的配置
+        release {
+            storeFile file("garyhu.jks")
+            storePassword 'garyhu'
+            keyAlias 'android'
+            keyPassword 'garyhu'
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true//是否启动混淆
+            zipAlignEnabled false//是否启动zipAlign
+            shrinkResources true //是否移除无用资源文件，shrinkResources依赖于minifyEnabled，必须和minifyEnabled一起用
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release//打包命令行：gradlew assembleRelease
+            applicationVariants.all { variant ->
+                if (variant.buildType.name.equals('release')) {
+                    variant.outputs.each { output ->
+                        def outputFile = output.outputFile
+                        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                            def fileName = "gradle4android_v${defaultConfig.versionName}_${releaseTime()}_${variant.flavorName}.apk"
+                            output.outputFile = new File(outputFile.parent, fileName)
+                        }
+                    }
+                }
+            }
+            //针对很多渠道
+            productFlavors.all { flavor ->
+                manifestPlaceholders.put("UMENG_CHANNEL_VALUE", name)
+            }
         }
     }
+    productFlavors {//多渠道打包，命令行打包：gradlew assembleRelease
+        xiaomi {
+            applicationId 'com.garyhu.demo'
+            //manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'xiaomi')
+        }
+
+        googlepaly {
+            applicationId 'com.garyhu.demo'
+            //manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'googlepaly')
+        }
+    }
+
+    lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
+        abortOnError false
+    }
+//    compileOptions {//可以进行 Java 的版本配置，以便使用对应版本的一些新特性,让IDE使用JAVA8语法解析
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 }
 
 dependencies {
@@ -25,7 +71,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile rootProject.ext.dependencies["appcompatV7"]
     testCompile 'junit:junit:4.12'
     compile 'me.leefeng:citypicker:1.0'
     //首页banner
@@ -37,7 +83,7 @@ dependencies {
     compile 'com.facebook.fresco:animated-gif:0.12.0'
     //facebook的弹簧动画库
     compile 'com.facebook.rebound:rebound:0.3.8'
-    compile 'com.android.support:design:24.2.1'
+    compile rootProject.ext.dependencies["design"]
     //仿通讯录的RecyclerView
     compile project(path: ':indexablerecyclerview')
     //下拉刷新
@@ -55,4 +101,7 @@ dependencies {
     compile project(path: ':sweetdialog')
     //侧滑删除和上拉加载下拉刷新的RecyclerView
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
+}
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }

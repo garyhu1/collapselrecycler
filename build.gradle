@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from: "customConfig.gradle"//自定义的gradle
 buildscript {
     repositories {
         jcenter()
@@ -13,7 +13,7 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+//为所有的工程的repositories配置为jcenters
 allprojects {
     repositories {
         jcenter()
@@ -23,3 +23,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+//可以自定义
+//ext {
+//    android = [
+//            compileSdkVersion : 24,
+//            buildToolsVersion :"24.0.3",
+//            minSdkVersion     :15,
+//            targetSdkVersion  :24,
+//    ]
+//
+//    dependencies = [
+//            appcompatV7 : 'com.android.support:appcompat-v7:24.2.1',
+//            design      : 'com.android.support:design:24.2.1'
+//    ]
+//}

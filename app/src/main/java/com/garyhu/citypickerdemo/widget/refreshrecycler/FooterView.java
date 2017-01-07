@@ -39,7 +39,7 @@ public abstract class FooterView extends RelativeLayout{
         View.inflate(context, getLayoutView(),this);
         rootContainer = getRootContainer();
         initView();
-        setNowState(FooterView.STATE.HIND);
+//        setNowState(FooterView.STATE.HIND);
     }
 
     /**

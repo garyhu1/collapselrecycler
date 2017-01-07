@@ -3,10 +3,12 @@ package com.garyhu.citypickerdemo.activity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.garyhu.citypickerdemo.BuildConfig;
 import com.garyhu.citypickerdemo.fragment.MyFragment;
 import com.garyhu.citypickerdemo.R;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("garyhu", "API_SERVER_URL=" + BuildConfig.API_SERVER_URL);
         btn = (Button) findViewById(R.id.btn);
         tv = (TextView) findViewById(R.id.tv);
         cityPicker = new CityPicker(MainActivity.this,this);
