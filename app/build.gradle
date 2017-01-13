@@ -104,6 +104,12 @@ dependencies {
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
     //手势放大图片
     compile 'com.commit451:PhotoView:1.2.4'
+    //网络请求
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    //gson解析
+    compile 'com.google.code.gson:gson:2.6.2'
 }
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))

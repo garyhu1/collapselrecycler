@@ -9,8 +9,17 @@ public class CityEntity implements IndexableEntity {
     private long id;
     private String name;
     private String pinyin;
+    private String code;
 
     public CityEntity() {
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public CityEntity(String name) {
