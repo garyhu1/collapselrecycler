@@ -145,7 +145,7 @@ public class PickCityActivity extends AppCompatActivity {
         cityList = new ArrayList<>();
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("*********")
+                .baseUrl("http://lala/fdfas/")
                 .build();
         ServerApi serverApi = retrofit.create(ServerApi.class);
         Call<ServerResponse<CityNewBean>> call = serverApi.getHomePage();
