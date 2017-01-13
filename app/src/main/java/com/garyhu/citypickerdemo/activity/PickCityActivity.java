@@ -113,6 +113,11 @@ public class PickCityActivity extends AppCompatActivity {
         return list;
     }
 
+    /** 从网络加载城市信息*/
+    public void getCity(){
+
+    }
+
     private List<CityEntity> iniyHotCityDatas() {
         List<CityEntity> list = new ArrayList<>();
         list.add(new CityEntity("杭州市"));

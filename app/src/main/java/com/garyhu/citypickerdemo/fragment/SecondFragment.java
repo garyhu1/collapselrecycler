@@ -202,7 +202,7 @@ public class SecondFragment extends BaseFragment implements AllTabsAdapter.onAll
 
         //属性动画实现
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, mPathMeasure.getLength());
-        valueAnimator.setDuration(500);
+        valueAnimator.setDuration(1000);
         // 匀速插值器
         valueAnimator.setInterpolator(new LinearInterpolator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -213,7 +213,7 @@ public class SecondFragment extends BaseFragment implements AllTabsAdapter.onAll
                 mPathMeasure.getPosTan(value, mCurrentPosition, null);
                 startView.setTranslationX(mCurrentPosition[0]);
                 startView.setTranslationY(mCurrentPosition[1]);
-                Log.e("tag", mCurrentPosition[0] + "@" + mCurrentPosition[1]);
+                Log.d("garyhu", mCurrentPosition[0] + "@" + mCurrentPosition[1]);
 
             }
         });
