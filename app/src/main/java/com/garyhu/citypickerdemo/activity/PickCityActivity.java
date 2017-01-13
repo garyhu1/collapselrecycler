@@ -132,7 +132,7 @@ public class PickCityActivity extends AppCompatActivity {
     private List<CityEntity> initDatas() {
         List<CityEntity> list = new ArrayList<>();
         List<String> cityStrings = Arrays.asList(getResources().getStringArray(R.array.city_array));
-        for (String item : cityList) {
+        for (String item : cityStrings) {
             CityEntity cityEntity = new CityEntity();
             cityEntity.setName(item);
             list.add(cityEntity);
@@ -173,6 +173,7 @@ public class PickCityActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ServerResponse<CityNewBean>> call, Throwable t) {
                 Toast.makeText(PickCityActivity.this, "fail load", Toast.LENGTH_SHORT).show();
+                handler.sendEmptyMessage(UPDATE);
             }
         });
     }
