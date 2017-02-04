@@ -22,3 +22,6 @@ ii.   pin 表示折叠完成时将该控件停放在顶部
 6. app:expandedTitleMarginXXXXX  设置Title的边距
 7. app:collapsedTitleGravity="right" 折叠之后文本的位置
 8.app:expandedTitleGravity="right|bottom" 展开之后文本的位置
+
+# 添加了权限的管理
+# banner和下拉刷新的冲突解决

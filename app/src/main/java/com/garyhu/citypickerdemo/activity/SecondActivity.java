@@ -112,5 +112,12 @@ public class SecondActivity extends AppCompatActivity{
             }
         });
 
+        findViewById(R.id.permission_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, PermissionActivity.class));
+            }
+        });
+
     }
 }

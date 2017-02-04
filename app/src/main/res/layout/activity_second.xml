@@ -65,6 +65,13 @@
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:text="沉浸式界面"/>
+        <Button
+            android:id="@+id/permission_activity"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="权限申请界面"/>
+
 
     </LinearLayout>
 
