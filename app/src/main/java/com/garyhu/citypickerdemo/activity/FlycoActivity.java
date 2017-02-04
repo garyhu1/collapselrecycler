@@ -41,19 +41,16 @@ public class FlycoActivity extends BaseActivity {
     //tab的标题、选中图标、未选中图标
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initData();
-
-        //给tab设置数据和关联的fragment
-        mTabLayout.setTabData(mTabEntities, this, R.id.fl_change, mFragments);
-    }
-
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_flyco;
+    }
+
+    @Override
+    protected void init() {
+        initData();
+        //给tab设置数据和关联的fragment
+        mTabLayout.setTabData(mTabEntities, this, R.id.fl_change, mFragments);
     }
 
     private void initData() {

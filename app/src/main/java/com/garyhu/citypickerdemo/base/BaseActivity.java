@@ -22,9 +22,12 @@ public abstract class BaseActivity extends SupportActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutRes());
         unbinder = ButterKnife.bind(this);
+        init();
     }
 
     protected abstract int getLayoutRes();
+
+    protected abstract void init();
 
     @Override
     protected void onDestroy() {

@@ -33,4 +33,5 @@
         <attr name="civ_innerCircleColor" format="color"/>
         <attr name="civ_innerCircleWidth" format="dimension"/>
     </declare-styleable>
+
 </resources>

@@ -111,5 +111,6 @@ public class SecondActivity extends AppCompatActivity{
                 startActivity(new Intent(SecondActivity.this, PickContactActivity.class));
             }
         });
+
     }
 }

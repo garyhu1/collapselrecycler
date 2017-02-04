@@ -13,4 +13,9 @@ public class PhotoViewActivity extends BaseActivity {
     protected int getLayoutRes() {
         return R.layout.activity_photo;
     }
+
+    @Override
+    protected void init() {
+
+    }
 }
