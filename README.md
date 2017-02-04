@@ -25,3 +25,6 @@ ii.   pin 表示折叠完成时将该控件停放在顶部
 
 # 添加了权限的管理
 # banner和下拉刷新的冲突解决
+# RecyclerView的下拉刷新和上拉加载
+# RecyclerView的侧滑删除
+# 城市的选择
