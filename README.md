@@ -28,3 +28,11 @@ ii.   pin 表示折叠完成时将该控件停放在顶部
 # RecyclerView的下拉刷新和上拉加载
 # RecyclerView的侧滑删除
 # 城市的选择
+
+##and.utils.system_hardware_software_receiver_shell.software.wifi
+| 名字 | 功能  | 优点|
+| :------------: |:---------------:| :-----:|
+| NetManager  | 查看当前网络类型与是否联网 |  |
+| MyWifiAnd3G  | 查看wifi列表，关闭/打开wifi/3G,startScans,获取ipAddress等 |  |
+| NetStatusReceiver  | `查看网络类型,与关于网络广播的类` |  |
+| NetworkManagerFinal  | 别人的留着 有些bug碰到或许可以参考下 |  |
