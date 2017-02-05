@@ -43,7 +43,6 @@ public class AppUtil {
         return false;
     }
 
-
     /**
      * 读取baseurl
      * @param url

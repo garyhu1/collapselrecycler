@@ -34,7 +34,7 @@ public class HttpDownManager {
     private Set<DownInfo> downInfos;
     /*回调sub队列*/
     private HashMap<String,ProgressDownSubscriber> subMap;
-    /*单利对象*/
+    /*单例对象*/
     private volatile static HttpDownManager INSTANCE;
     /*数据库类*/
     private DbDwonUtil db;
