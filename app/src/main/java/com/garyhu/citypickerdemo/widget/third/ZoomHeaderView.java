@@ -1,16 +1,13 @@
-package com.garyhu.citypickerdemo.widget;
+package com.garyhu.citypickerdemo.widget.third;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;

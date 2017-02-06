@@ -1,8 +1,6 @@
 package com.garyhu.citypickerdemo.activity;
 
-import android.app.Application;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +12,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.garyhu.citypickerdemo.R;
-import com.garyhu.citypickerdemo.widget.CtrlLinearLayoutManager;
+import com.garyhu.citypickerdemo.widget.third.CtrlLinearLayoutManager;
 import com.garyhu.citypickerdemo.widget.MarginConfig;
-import com.garyhu.citypickerdemo.widget.ZoomHeaderView;
+import com.garyhu.citypickerdemo.widget.third.ZoomHeaderView;
 
 import java.util.ArrayList;
 

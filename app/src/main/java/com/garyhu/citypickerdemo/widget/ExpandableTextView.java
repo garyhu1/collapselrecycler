@@ -27,6 +27,7 @@ import com.garyhu.citypickerdemo.R;
 /**
  * Created by garyhu
  * on 2016/10/17.
+ * 可以手气的TextView
  */
 
 public class ExpandableTextView extends LinearLayout implements View.OnClickListener{

@@ -1,4 +1,4 @@
-package com.garyhu.citypickerdemo.widget;
+package com.garyhu.citypickerdemo.widget.refreshandbanner;
 
 import android.content.Context;
 import android.util.AttributeSet;

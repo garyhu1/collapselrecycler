@@ -1,4 +1,4 @@
-package com.garyhu.citypickerdemo.widget;
+package com.garyhu.citypickerdemo.widget.cusPtr;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

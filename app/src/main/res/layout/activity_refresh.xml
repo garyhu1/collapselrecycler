@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.garyhu.citypickerdemo.widget.CusPtrFrameLayout
+    <com.garyhu.citypickerdemo.widget.cusPtr.CusPtrFrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ptr"
@@ -22,6 +22,6 @@
             android:text="你家是kid阿双方卡萨丁卡号是
             东方红撒回复噶舒服范德萨的说法阿发发顺丰
             服务让我去而通过again我去我去"/>
-    </com.garyhu.citypickerdemo.widget.CusPtrFrameLayout>
+    </com.garyhu.citypickerdemo.widget.cusPtr.CusPtrFrameLayout>
 
 </LinearLayout>

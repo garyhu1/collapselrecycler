@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.garyhu.citypickerdemo.widget.CusPtrClassicFrameLayout
+    <com.garyhu.citypickerdemo.widget.refreshandbanner.CusPtrClassicFrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ptr"
@@ -21,7 +21,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <com.garyhu.citypickerdemo.widget.CusConvenientBanner
+            <com.garyhu.citypickerdemo.widget.refreshandbanner.CusConvenientBanner
                 android:id="@+id/banner"
                 app:canLoop="true"
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         </RelativeLayout>
 
 
-    </com.garyhu.citypickerdemo.widget.CusPtrClassicFrameLayout>
+    </com.garyhu.citypickerdemo.widget.refreshandbanner.CusPtrClassicFrameLayout>
 
 
 </RelativeLayout>

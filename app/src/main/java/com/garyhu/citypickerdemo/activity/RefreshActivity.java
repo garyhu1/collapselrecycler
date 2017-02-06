@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.garyhu.citypickerdemo.R;
-import com.garyhu.citypickerdemo.widget.CusPtrFrameLayout;
+import com.garyhu.citypickerdemo.widget.cusPtr.CusPtrFrameLayout;
 
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;

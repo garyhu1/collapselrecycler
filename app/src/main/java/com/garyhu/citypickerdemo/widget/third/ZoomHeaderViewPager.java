@@ -1,4 +1,4 @@
-package com.garyhu.citypickerdemo.widget;
+package com.garyhu.citypickerdemo.widget.third;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

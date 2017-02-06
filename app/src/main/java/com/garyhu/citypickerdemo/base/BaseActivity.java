@@ -20,6 +20,7 @@ public abstract class BaseActivity extends SupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatus();
         setContentView(getLayoutRes());
         unbinder = ButterKnife.bind(this);
         init();
@@ -28,6 +29,11 @@ public abstract class BaseActivity extends SupportActivity {
     protected abstract int getLayoutRes();
 
     protected abstract void init();
+
+    /** 设置界面的显示状态*/
+    protected void setStatus(){
+
+    }
 
     @Override
     protected void onDestroy() {

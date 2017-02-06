@@ -52,6 +52,10 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activity.PermissionActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activity.DragActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".widget.drager.DragPhotoActivity"
+            android:theme="@style/translucent"/>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@
         android:background="#f1f1f1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.garyhu.citypickerdemo.widget.ZoomHeaderBehavior"
+        app:layout_behavior="com.garyhu.citypickerdemo.widget.third.ZoomHeaderBehavior"
         />
 
 
@@ -37,7 +37,7 @@
             android:background="#88000000" />
     </RelativeLayout>
 
-    <com.garyhu.citypickerdemo.widget.ZoomHeaderView
+    <com.garyhu.citypickerdemo.widget.third.ZoomHeaderView
         android:id="@+id/zoomHeader"
         android:layout_width="match_parent"
         android:layout_height="500dp"
@@ -65,13 +65,13 @@
                 android:layout_height="wrap_content"
                 />
         </RelativeLayout>
-        <com.garyhu.citypickerdemo.widget.ZoomHeaderViewPager
+        <com.garyhu.citypickerdemo.widget.third.ZoomHeaderViewPager
             android:id="@+id/viewpager"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:clipChildren="false"
             />
-    </com.garyhu.citypickerdemo.widget.ZoomHeaderView>
+    </com.garyhu.citypickerdemo.widget.third.ZoomHeaderView>
 
 
 </android.support.design.widget.CoordinatorLayout>

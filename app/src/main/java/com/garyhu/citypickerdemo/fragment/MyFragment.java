@@ -16,8 +16,8 @@ import com.garyhu.citypickerdemo.adapter.NetworkHolder;
 import com.garyhu.citypickerdemo.R;
 import com.garyhu.citypickerdemo.util.ScreenUtil;
 import com.garyhu.citypickerdemo.activity.SecondActivity;
-import com.garyhu.citypickerdemo.widget.CusConvenientBanner;
-import com.garyhu.citypickerdemo.widget.CusPtrClassicFrameLayout;
+import com.garyhu.citypickerdemo.widget.refreshandbanner.CusConvenientBanner;
+import com.garyhu.citypickerdemo.widget.refreshandbanner.CusPtrClassicFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;

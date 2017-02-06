@@ -1,4 +1,4 @@
-package com.garyhu.citypickerdemo.widget;
+package com.garyhu.citypickerdemo.widget.third;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
@@ -6,11 +6,10 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.garyhu.citypickerdemo.R;
+import com.garyhu.citypickerdemo.widget.MarginConfig;
 
 /**
  * Created by wing on 12/4/16.
