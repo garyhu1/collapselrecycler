@@ -41,6 +41,8 @@ ii.   pin 表示折叠完成时将该控件停放在顶部
 ##SmsObserver
 短信自动填写的帮助类
 ###具体使用
+··java
+
 SmsObserver smsObserver = new SmsObserver(this, new Handler(),
                 new SmsObserver.SmsListener() {
                     @Override
@@ -51,3 +53,5 @@ SmsObserver smsObserver = new SmsObserver(this, new Handler(),
                 });
 this.getContentResolver().registerContentObserver(
                 Uri.parse("content://sms/"), true, smsObserver);
+
+``
