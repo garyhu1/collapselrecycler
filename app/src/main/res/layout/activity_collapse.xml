@@ -6,8 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        >
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapse_layout"
             android:layout_width="match_parent"
@@ -16,29 +18,90 @@
             app:expandedTitleGravity="left"
             app:collapsedTitleGravity="center_horizontal"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <ImageView
+            <LinearLayout
                 android:id="@+id/tool_icon"
-                android:src="@drawable/nan"
-                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好世界"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好世界"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好世界"/>
+            </LinearLayout>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/tool_bar"
+                android:layout_gravity="bottom"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
-
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/ic_launcher"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ff0"
+                            android:textSize="12sp"
+                            android:text="奥巴马"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ff0"
+                            android:textSize="10sp"
+                            android:text="213421434"/>
+                    </LinearLayout>
+                </LinearLayout>
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
-    <android.support.v4.widget.NestedScrollView
+    <com.garyhu.citypickerdemo.widget.MyNestedScrollView
         android:id="@+id/nest"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/text"/>
-    </android.support.v4.widget.NestedScrollView>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/text1"/>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:colorBackground"
+                android:fillViewport="false"
+                android:tag="sticky"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="scrollable">
+
+            </android.support.design.widget.TabLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/text"/>
+        </LinearLayout>
+    </com.garyhu.citypickerdemo.widget.MyNestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

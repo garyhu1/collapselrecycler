@@ -2,6 +2,7 @@ package com.garyhu.citypickerdemo.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,12 +27,12 @@ public class DragActivity extends BaseActivity {
     ImageView img2;
     @BindView(R.id.imageView3)
     ImageView img3;
-    @BindView(R.id.imageView4)
-    ImageView img4;
-    @BindView(R.id.imageView5)
-    ImageView img5;
 
     private ArrayList<Integer> imgResIds = new ArrayList<>();
+    private ArrayList<Integer> heights = new ArrayList<>();
+    private ArrayList<Integer> widths = new ArrayList<>();
+    private ArrayList<Integer> tops = new ArrayList<>();
+    private ArrayList<Integer> lefts = new ArrayList<>();
 
     @Override
     protected int getLayoutRes() {
@@ -59,18 +60,6 @@ public class DragActivity extends BaseActivity {
                 startPhotoActivity(DragActivity.this,img3,2);
             }
         });
-        img4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startPhotoActivity(DragActivity.this,img4,3);
-            }
-        });
-        img5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startPhotoActivity(DragActivity.this,img5,4);
-            }
-        });
     }
 
     /** 添加图片资源*/
@@ -78,8 +67,29 @@ public class DragActivity extends BaseActivity {
         imgResIds.add(R.drawable.img1);
         imgResIds.add(R.drawable.img2);
         imgResIds.add(R.drawable.img3);
-        imgResIds.add(R.drawable.img4);
-        imgResIds.add(R.drawable.img5);
+    }
+
+    /** 添加图片宽高资源*/
+    public void addHeightAndWidth(){
+        heights.add(img1.getHeight());
+        heights.add(img2.getHeight());
+        heights.add(img3.getHeight());
+        widths.add(img1.getWidth());
+        widths.add(img2.getWidth());
+        widths.add(img3.getWidth());
+        int[] loc1 = new int[2];
+        int[] loc2 = new int[2];
+        int[] loc3 = new int[2];
+        img1.getLocationOnScreen(loc1);
+        img2.getLocationOnScreen(loc2);
+        img3.getLocationOnScreen(loc3);
+        lefts.add(loc1[0]);
+        lefts.add(loc2[0]);
+        lefts.add(loc3[0]);
+        tops.add(loc1[1]);
+        tops.add(loc2[1]);
+        tops.add(loc3[1]);
+        Log.d("garyhu","loc1[0] = "+loc1[0]);
     }
 
     @Override
@@ -96,15 +106,20 @@ public class DragActivity extends BaseActivity {
     }
 
     public  void startPhotoActivity(Context context, ImageView imageView,int num) {
+        addHeightAndWidth();
         Intent intent = new Intent(context, DragPhotoActivity.class);
-        int location[] = new int[2];
+        int[] location = new int[2];
 
         imageView.getLocationOnScreen(location);
         intent.putExtra("num",num);
-        intent.putExtra("left", location[0]);
-        intent.putExtra("top", location[1]);
-        intent.putExtra("height", imageView.getHeight());
-        intent.putExtra("width", imageView.getWidth());
+//        intent.putExtra("left", location[0]);
+//        intent.putExtra("top", location[1]);
+//        intent.putExtra("height", imageView.getHeight());
+//        intent.putExtra("width", imageView.getWidth());
+        intent.putIntegerArrayListExtra("heights", heights);
+        intent.putIntegerArrayListExtra("widths", widths);
+        intent.putIntegerArrayListExtra("tops", tops);
+        intent.putIntegerArrayListExtra("lefts", lefts);
         intent.putIntegerArrayListExtra("imgs",imgResIds);
 
         context.startActivity(intent);

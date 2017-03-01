@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.garyhu.citypickerdemo.R;
 
@@ -19,9 +21,9 @@ import java.util.List;
 
 public class DragPhotoActivity extends AppCompatActivity {
     private ViewPager mViewPager;
-    private ArrayList<Integer> mList;
+    private ArrayList<Integer> mList,heights,widths,tops,lefts;
     private DragPhotoView[] mPhotoViews;
-    private int num;
+    private int num,finishNum;
 
     int mOriginLeft,fOriginLeft;
     int mOriginTop,fOriginTop;
@@ -46,8 +48,13 @@ public class DragPhotoActivity extends AppCompatActivity {
         }
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         num = getIntent().getIntExtra("num",0);
+        finishNum = num;
 
         mList = getIntent().getIntegerArrayListExtra("imgs");
+        heights = getIntent().getIntegerArrayListExtra("heights");
+        widths = getIntent().getIntegerArrayListExtra("widths");
+        tops = getIntent().getIntegerArrayListExtra("tops");
+        lefts = getIntent().getIntegerArrayListExtra("lefts");
 
         mPhotoViews = new DragPhotoView[mList.size()];
 
@@ -101,6 +108,7 @@ public class DragPhotoActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                finishNum = position;
             }
 
             @Override
@@ -114,10 +122,14 @@ public class DragPhotoActivity extends AppCompatActivity {
                     public void onGlobalLayout() {
                         mViewPager.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
-                        mOriginLeft = getIntent().getIntExtra("left", 0);
-                        mOriginTop = getIntent().getIntExtra("top", 0);
-                        mOriginHeight = getIntent().getIntExtra("height", 0);
-                        mOriginWidth = getIntent().getIntExtra("width", 0);
+                        mOriginLeft = lefts.get(num);
+                        mOriginTop = tops.get(num);
+//                        mOriginLeft = getIntent().getIntExtra("left", 0);
+//                        mOriginTop = getIntent().getIntExtra("top", 0);
+//                        mOriginHeight = getIntent().getIntExtra("height", 0);
+//                        mOriginWidth = getIntent().getIntExtra("width", 0);
+                        mOriginHeight = heights.get(num);
+                        mOriginWidth = widths.get(num);
                         mOriginCenterX = mOriginLeft + mOriginWidth / 2;
                         mOriginCenterY = mOriginTop + mOriginHeight / 2;
 
@@ -160,16 +172,41 @@ public class DragPhotoActivity extends AppCompatActivity {
      */
     private void performExitAnimation(final DragPhotoView view, float x, float y, float w, float h) {
         view.finishAnimationCallBack();
-        float viewX = mTargetWidth / 2 + x - mTargetWidth * mScaleX / 2;
-        float viewY = mTargetHeight / 2 + y - mTargetHeight * mScaleY / 2;
+        fOriginLeft = lefts.get(finishNum);
+        fOriginTop = tops.get(finishNum);
+//                        mOriginLeft = getIntent().getIntExtra("left", 0);
+//                        mOriginTop = getIntent().getIntExtra("top", 0);
+//                        mOriginHeight = getIntent().getIntExtra("height", 0);
+//                        mOriginWidth = getIntent().getIntExtra("width", 0);
+        fOriginHeight = heights.get(finishNum);
+        fOriginWidth = widths.get(finishNum);
+        fOriginCenterX = fOriginLeft + fOriginWidth / 2;
+        fOriginCenterY = fOriginTop + fOriginHeight / 2;
+
+        int[] location = new int[2];
+
+        view.getLocationOnScreen(location);
+
+        fTargetHeight = (float) view.getHeight();
+        fTargetWidth = (float) view.getWidth();
+        fScaleX = (float) fOriginWidth / fTargetWidth;
+        fScaleY = (float) fOriginHeight / fTargetHeight;
+
+        float targetCenterX = location[0] + fTargetWidth / 2;
+        float targetCenterY = location[1] + fTargetHeight / 2;
+
+        fTranslationX = fOriginCenterX - targetCenterX;
+        fTranslationY = fOriginCenterY - targetCenterY;
+        float viewX = fTargetWidth / 2 + x - fTargetWidth * fScaleX / 2;
+        float viewY = fTargetHeight / 2 + y - fTargetHeight * fScaleY / 2;
         view.setX(viewX);
         view.setY(viewY);
 
-        float centerX = view.getX() + mOriginWidth / 2;
-        float centerY = view.getY() + mOriginHeight / 2;
+        float centerX = view.getX() + fOriginWidth / 2;
+        float centerY = view.getY() + fOriginHeight / 2;
 
-        float translateX = mOriginCenterX - centerX;
-        float translateY = mOriginCenterY - centerY;
+        float translateX = fOriginCenterX - centerX;
+        float translateY = fOriginCenterY - centerY;
 
 
         ValueAnimator translateXAnimator = ValueAnimator.ofFloat(view.getX(), view.getX() + translateX);
@@ -217,8 +254,37 @@ public class DragPhotoActivity extends AppCompatActivity {
 
     private void finishWithAnimation() {
 
-        final DragPhotoView photoView = mPhotoViews[num];
-        ValueAnimator translateXAnimator = ValueAnimator.ofFloat(0, mTranslationX);
+        final DragPhotoView photoView = mPhotoViews[finishNum];
+        fOriginLeft = lefts.get(finishNum);
+        fOriginTop = tops.get(finishNum);
+//                        mOriginLeft = getIntent().getIntExtra("left", 0);
+//                        mOriginTop = getIntent().getIntExtra("top", 0);
+//                        mOriginHeight = getIntent().getIntExtra("height", 0);
+//                        mOriginWidth = getIntent().getIntExtra("width", 0);
+        fOriginHeight = heights.get(finishNum);
+        fOriginWidth = widths.get(finishNum);
+        fOriginCenterX = fOriginLeft + fOriginWidth / 2;
+        fOriginCenterY = fOriginTop + fOriginHeight / 2;
+
+        int[] location = new int[2];
+
+        photoView.getLocationOnScreen(location);
+
+        fTargetHeight = (float) photoView.getHeight();
+        fTargetWidth = (float) photoView.getWidth();
+        fScaleX = (float) fOriginWidth / fTargetWidth;
+        fScaleY = (float) fOriginHeight / fTargetHeight;
+
+        float targetCenterX = location[0] + fTargetWidth / 2;
+        float targetCenterY = location[1] + fTargetHeight / 2;
+
+        fTranslationX = fOriginCenterX - targetCenterX;
+        fTranslationY = fOriginCenterY - targetCenterY;
+        Log.d("garyhu","fTranslationX = "+fTranslationX);
+        Log.d("garyhu","fTranslationY = "+fTranslationY);
+        Log.d("garyhu","fScaleX = "+fScaleX);
+        Log.d("garyhu","fScaleY = "+fScaleY);
+        ValueAnimator translateXAnimator = ValueAnimator.ofFloat(0, fTranslationX);
         translateXAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -228,7 +294,7 @@ public class DragPhotoActivity extends AppCompatActivity {
         translateXAnimator.setDuration(300);
         translateXAnimator.start();
 
-        ValueAnimator translateYAnimator = ValueAnimator.ofFloat(0, mTranslationY);
+        ValueAnimator translateYAnimator = ValueAnimator.ofFloat(0, fTranslationY);
         translateYAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -238,7 +304,7 @@ public class DragPhotoActivity extends AppCompatActivity {
         translateYAnimator.setDuration(300);
         translateYAnimator.start();
 
-        ValueAnimator scaleYAnimator = ValueAnimator.ofFloat(1, mScaleY);
+        ValueAnimator scaleYAnimator = ValueAnimator.ofFloat(1, fScaleY);
         scaleYAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -248,7 +314,7 @@ public class DragPhotoActivity extends AppCompatActivity {
         scaleYAnimator.setDuration(300);
         scaleYAnimator.start();
 
-        ValueAnimator scaleXAnimator = ValueAnimator.ofFloat(1, mScaleX);
+        ValueAnimator scaleXAnimator = ValueAnimator.ofFloat(1, fScaleX);
         scaleXAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
